@@ -1,0 +1,19 @@
+<h1>product management</h1>
+
+<p>current url:{{url$|async}}</p>
+<p>route params</p>
+<pre>{{params$|async}}</pre>
+
+<p>total products:{{total$|async}}</p>
+<button (click)="addNewProducts()">add product</button>
+@for(product of products$|async;track product.id){
+    <div>
+        <h3>product.title</h3>
+        <p>product price:{{product.price}}</p>
+        <a [routerLink]="['/products', product.id]">
+        View Route
+      </a>
+
+        <button (click)="removeProduct(product.id)">remove</button>
+    </div>
+}

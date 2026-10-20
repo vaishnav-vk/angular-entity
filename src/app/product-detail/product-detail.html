@@ -1,0 +1,11 @@
+<h2>Product Details</h2>
+
+@if (product$ | async; as product) {
+  <h3>{{ product.title }}</h3>
+  <p>Price: ₹{{ product.price }}</p>
+  <p>{{ product.description }}</p>
+} @else {
+  <p>Product not found.</p>
+}
+
+<a routerLink="/products">Back to Products</a>
